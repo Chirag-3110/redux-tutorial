@@ -1,0 +1,6 @@
+export const authtypes={
+    SET_USERS:"SET_USERS",
+    IS_FETCHING_START:"IS_FETCHING_START",
+    IS_FETCHING_END:"IS_FETCHING_END",
+    IS_ERROR:"IS_ERROR"
+}

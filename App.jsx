@@ -83,19 +83,20 @@ import {
 } from 'react-native';
 
 import {PhonePe, Constants} from 'phonepesdk'
-
+import { NavigationContainer } from '@react-navigation/native';
+import MainHome from './src/screens/RepeatScreens/MainHome';
+import NewContenr from './src/screens/RepeatScreens/NewContenr';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 const App=()=>{
   
-    const buildSdk=async()=>{
-      let operatingSystem = Constants.OS.android
-      let sdk = await PhonePe.build(Constants.Species.native, operatingSystem);
-      console.log(sdk)
-    }
-    return(
-      <View>
-        <Text style={{color:"red"}}>dwfa</Text>
-        <Button title='Click' onPress={buildSdk} />
-      </View>
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen name="Home" component={MainHome} />
+        <Stack.Screen name="New" component={NewContenr} />
+        </Stack.Navigator>
+      </NavigationContainer>
     )
 }
 
